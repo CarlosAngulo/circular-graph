@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="graph"
+    [ngStyle]="{'width': + offset * 2 + 'px', 'height': offset * 2 + 'px'}">
+    <div
+      *ngFor="let node of nodes"
+      class="group">
+      <div 
+        class="node"
+        [ngStyle]="{'left': node.position?.x + 'px', 'top': node.position?.y + 'px', 'width': size + 'px', 'height': size + 'px', 'margin-left': -size/2 + 'px', 'margin-top': -size/2 + 'px'}">
+        {{node.name}}
+      </div>
+      <div
+        class="edge"
+        *ngFor="let edge of node.edges"
+        [ngStyle]="{ 'left': edge.x + 'px', 'top': edge.y + 'px', 'width': edge.width + 'px', 'height': edge.height + 'px'}"
+        >
+        <svg
+          class="svg"
+          xmlns="http://www.w3.org/2000/svg"
+          [attr.viewBox]="'0 0 ' + edge.width + ' ' + edge.height">
+          <path _ngcontent-clj-c17="" stroke="#AAA" stroke-width="0.8" fill="none" 
+          class="connector" [attr.d]="'M '+ edge.M +' C ' + edge.center +', '  + edge.center + ' ' + edge.end"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
