@@ -25,3 +25,17 @@
     </div>
   </div>
 </div>
+
+<div class="loader">
+  <div class="loader-button"
+  (click)="toggleLoader()">
+    <span class="material-symbols-outlined">
+      edit_note
+    </span>
+  </div>
+  <load-data
+    *ngIf="showLoader"
+    [text]="receivedText"
+    (onTextChange)="onReceiveText($event)">
+  </load-data>
+</div>

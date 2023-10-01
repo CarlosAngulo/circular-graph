@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoadDataComponent } from './load-data/load-dota.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadDataComponent
   ],
   imports: [
     BrowserModule,

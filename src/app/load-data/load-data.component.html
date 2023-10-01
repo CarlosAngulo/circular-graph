@@ -1,0 +1,9 @@
+<div class="load-data">
+    <p>Agrega el contenido del archivo en formato CSV</p>
+    <textarea #CSVContent name="csv" id="" cols="30" rows="10">{{text}}</textarea>
+    <button
+        type="button"
+        (click)="sendText(CSVContent.value)">
+        procesar
+    </button>
+</div>
